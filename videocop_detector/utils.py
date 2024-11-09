@@ -17,7 +17,7 @@ import numpy as np
 import torch
 import sys
 from utils import *
-from videocop_detector.checkpoint import *
+from VideoCop_Detector.checkpoint import *
 from sklearn.metrics import roc_curve, auc, roc_auc_score
 from tqdm import tqdm
 

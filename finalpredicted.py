@@ -2,8 +2,8 @@ import argparse
 import os
 from tabulate import tabulate
 from data_utils.face_detection import *
-from videocop_detector.utils import *
-from videocop_detector.DeepFakeDetectModel import *
+from VideoCop_Detector.utils import *
+from VideoCop_Detector.DeepFakeDetectionModel import *
 import torchvision
 from data_utils.datasets import *
 import warnings
@@ -34,9 +34,7 @@ def predict_deepfake(input_videofile, df_method, debug=False, verbose=False):
 
     if verbose:
         print(f'Extracting faces from the video')
-    # Generate JSON file with location of faces
     extract_landmarks_from_video(input_videofile, output_path, overwrite=True)
-    # Crop faces from the video using the JSON file created earlier
     crop_faces_from_video(input_videofile, output_path, plain_faces_data_path, overwrite=True)
 
     if df_method == 'plain_frames':
@@ -47,11 +45,12 @@ def predict_deepfake(input_videofile, df_method, debug=False, verbose=False):
 
     if verbose:
         print(f'Detecting DeepFakes using method: {df_method}')
-    model = VideoCopDetectModel(frame_dim=model_params['imsize'], encoder_name=model_params['encoder_name'])
+    model = DeepFakeDetectionModel(frame_dim=model_params['imsize'], encoder_name=model_params['encoder_name'])
     if verbose:
         print(f'Loading model weights {model_path}')
-    check_point_dict = torch.load(model_path)
+    check_point_dict = torch.load(model_path, map_location=torch.device('cpu'))
     model.load_state_dict(check_point_dict['model_state_dict'])
+
     model = model.to(device)
     model.eval()
 

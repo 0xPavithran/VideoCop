@@ -1,14 +1,14 @@
-from videocop_detector.utils import *
+from VideoCop_Detector.utils import *
 import torch
 import torch.nn as nn
 from utils import *
 from data_utils.utils import *
 import torch.nn as nn
 import torch.nn.functional as F
-from videocop_detector.features import *
+from VideoCop_Detector.features import *
 
 
-class VideoCopDetectModel(nn.Module):
+class DeepFakeDetectionModel(nn.Module):
 
     def __init__(self, frame_dim=None, encoder_name=None):
         super().__init__()
