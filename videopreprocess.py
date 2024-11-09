@@ -10,7 +10,7 @@
 
 import argparse
 from data_utils.face_detection import *
-from deep_fake_detect.features import *
+from videocop_detector.features import *
 import data_utils.augmentation as augmentation
 import data_utils.distractions as distractions
 import pickle

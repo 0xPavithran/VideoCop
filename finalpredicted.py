@@ -2,8 +2,8 @@ import argparse
 import os
 from tabulate import tabulate
 from data_utils.face_detection import *
-from deep_fake_detect.utils import *
-from deep_fake_detect.DeepFakeDetectModel import *
+from videocop_detector.utils import *
+from videocop_detector.DeepFakeDetectModel import *
 import torchvision
 from data_utils.datasets import *
 import warnings
@@ -47,7 +47,7 @@ def predict_deepfake(input_videofile, df_method, debug=False, verbose=False):
 
     if verbose:
         print(f'Detecting DeepFakes using method: {df_method}')
-    model = DeepFakeDetectModel(frame_dim=model_params['imsize'], encoder_name=model_params['encoder_name'])
+    model = VideoCopDetectModel(frame_dim=model_params['imsize'], encoder_name=model_params['encoder_name'])
     if verbose:
         print(f'Loading model weights {model_path}')
     check_point_dict = torch.load(model_path)
