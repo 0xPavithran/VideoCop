@@ -14,7 +14,7 @@
 
 
    
-### **Test the  VideoCop** : https://videocop.streamlit.app/ 
+### **Test the  VideoCop** : https://videocop.streamlit.app/ (use videos from "Test Sample Videos" folder )
 
 ### How It Works:
 1. **Upload a Video**: Users upload a video file via the simple file uploader interface.
