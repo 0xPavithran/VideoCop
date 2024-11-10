@@ -10,7 +10,7 @@
 4. **User-Friendly Interface**: Built with **Streamlit**, VideoCop provides an easy-to-use web interface that allows users to upload videos and select detection methods with just a few clicks.
 
 5. **Efficient Video Analysis**: The app works on popular video formats (e.g., MP4) and provides insights into the likelihood of deepfake content based on various visual cues. Users can easily understand the results through a clear display of probabilities and a labeled output (either "real" or "fake").
-6. 
+   
 7. **Test the  VideoCop** : https://videocop.streamlit.app/ 
 
 ### How It Works:
