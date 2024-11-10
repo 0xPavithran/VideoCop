@@ -10,7 +10,8 @@ import warnings
 import multiprocessing
 import sys
 
-warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning)
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
 
 
 def predict_deepfake(input_videofile, df_method, debug=False, verbose=False):
